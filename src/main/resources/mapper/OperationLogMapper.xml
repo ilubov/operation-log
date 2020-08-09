@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.i.lubov.mapper.OperationLogMapper">
+    <resultMap id="SystemLogResult" type="com.i.lubov.entity.OperationLog">
+        <result property="id" column="id" />
+        <result property="userName" column="user_name" />
+        <result property="description" column="description" />
+        <result property="method" column="method" />
+        <result property="params" column="params" />
+        <result property="logType" column="log_type" />
+        <result property="requestIp" column="request_ip" />
+        <result property="browser" column="browser" />
+        <result property="executeTime" column="execute_time" />
+        <result property="exceptionDetail" column="exception_detail" />
+    </resultMap>
+
+    <sql id="selectAllColumns">
+        select
+            id ,
+            user_name ,
+            description ,
+            method ,
+            params ,
+            log_type ,
+            request_ip ,
+            browser ,
+            execute_time ,
+            exception_detail
+        from system_log
+    </sql>
+</mapper>
